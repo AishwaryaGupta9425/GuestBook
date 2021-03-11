@@ -1,0 +1,54 @@
+
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link th:href="@{http://fonts.googleapis.com/css?family=Montserrat:400,700}" rel="stylesheet" type="text/css" />
+<link th:href="@{/css/default.css}" rel="stylesheet" type="text/css" media="all" />
+<link th:href="@{/css/table.css}" rel="stylesheet" type="text/css" media="all" />
+</head>
+<body>
+<div id="wrapper" class="container">
+	<div id="header">
+		<div id="logo">
+			<h1><a href="#">My Guest Book</a></h1>
+		
+		</div>
+		<div id="menu">
+			<ul>
+				<li class="current_page_item"><a th:href="@{'userhome?email='+${user}}">Home Page</a></li>
+				
+				<li><a th:href="@{'myprofile?email='+${user}}">My Profile</a></li>
+				<li><a th:href="@{'viewnotes?email='+${user}}">View Notes</a></li>
+				
+				<li><a th:href="@{guestlogin}">Logout</a></li>
+					
+			</ul>
+		</div>
+	</div>
+
+	Hello User Welcome <p th:text="${user}" style="color:red;"> </p>
+	
+	<div id="banner">
+	
+	<center>
+	<h2>Write Your Notes Here</h2>
+	<p th:text="${message}" style="color:green;">
+	<form th:action="@{/dataaction}" method="post">
+		<table>
+	<tr><th>UserName</th><td><input type="text" name="email" th:value="${user}" readonly></td></tr>
+		<tr><th>Write</th><td><textarea cols="80" rows="20" name="data" required></textarea></td></tr>
+		<tr><th></th><td><input type="submit" value="Submit Note"></td></tr>
+	
+	</table>
+	</form>
+	</center>
+	
+	</div>
+	
+	
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link th:href="@{http://fonts.googleapis.com/css?family=Montserrat:400,700}" rel="stylesheet" type="text/css" />
+<link th:href="@{/css/default.css}" rel="stylesheet" type="text/css" media="all" />
+<link th:href="@{/css/table.css}" rel="stylesheet" type="text/css" media="all" />
+</head>
+<body>
+<div id="wrapper" class="container">
+	<div id="header">
+		<div id="logo">
+			<h1><a href="#">My Guest Book</a></h1>
+			<p>Application</p>
+		</div>
+		<div id="menu">
+			<ul>
+				<li><a th:href="@{/}">Homepage</a></li>
+				<li><a th:href="@{guestlogin}">Guest Login</a></li>
+				<li><a th:href="@{guestregister}">Guest Register</a></li>
+				<li class="current_page_item"><a th:href="@{adminlogin}">Admin</a></li>
+			
+			</ul>
+		</div>
+	</div>
+	<h2 th:text="${message}" style="color:red;"></h2>
+	<div id="banner"><img th:src="@{/images/header-image.jpg}" width="1100" height="500" alt="" /></div>
+	<div id="page">
+		<div id="content">
+			<div id="cbox1">
+			<center>
+			
+				<h2><u> Admin Login Here</u></h2>
+				<form th:action="@{adminloginaction}" method="post">
+				<table>
+				<tr><th>UserName</th><td><input type="text" name="username" required></td></tr>
+				<tr><th>Password</th><td><input type="password" name="password" required></td></tr>
+				<tr><th></th><td><input type="submit" value="Login"> <input type="reset" value="Reset"></td></tr>
+			
+					</table>
+				</form>
+				</center>
+				</div>
+			<div id="two-column">
+				
+				
+			</div>
+		</div>
+		<div id="sidebar">
+			<div id="box1">
+				<h2>Dashboard Menu</h2>
+				<ul class="style1">
+					<li class="first"><a th:href="@{/}">Home Page</a></li>
+					<li><a th:href="@{guestlogin}">Guest Login</a></li>
+					<li><a th:href="@{guestregister}">Guest Register</a></li>
+					<li><a th:href="@{adminlogin}">Admin</a></li>
+				
+				</ul>
+				
+			</div>
+			
+		</div>
+	</div>
+	
+</div>
+</body>
+</html>

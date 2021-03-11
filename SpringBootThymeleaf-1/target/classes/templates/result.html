@@ -1,0 +1,40 @@
+
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link th:href="@{http://fonts.googleapis.com/css?family=Montserrat:400,700}" rel="stylesheet" type="text/css" />
+<link th:href="@{/css/default.css}" rel="stylesheet" type="text/css" media="all" />
+<link th:href="@{/css/table.css}" rel="stylesheet" type="text/css" media="all" />
+</head>
+<body>
+<div id="wrapper" class="container">
+	<div id="header">
+		<div id="logo">
+			<h1><a href="#">My Guest Book</a></h1>
+			<p>Application</p>
+		</div>
+		<div id="menu">
+			<ul>
+				<li><a th:href="@{/}">Homepage</a></li>
+				<li><a th:href="@{guestlogin}">Guest Login</a></li>
+				<li class="current_page_item"><a th:href="@{guestregister}">Guest Register</a></li>
+				<li><a th:href="@{adminlogin}">Admin</a></li>
+			
+			</ul>
+		</div>
+	</div>
+	<div id="banner">
+	
+	<font color="red"><h2 th:text="${message}"></h2></font>
+<h3>Click To Login <a th:href="@{guestlogin}">Login</a></h3>
+	
+	
+	</div>
+	
+	
+</div>
+</body>
+</html>

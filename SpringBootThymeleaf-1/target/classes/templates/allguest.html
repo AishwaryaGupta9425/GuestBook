@@ -1,0 +1,61 @@
+
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link th:href="@{http://fonts.googleapis.com/css?family=Montserrat:400,700}" rel="stylesheet" type="text/css" />
+<link th:href="@{/css/default.css}" rel="stylesheet" type="text/css" media="all" />
+<link th:href="@{/css/table.css}" rel="stylesheet" type="text/css" media="all" />
+</head>
+<body>
+<div id="wrapper" class="container">
+	<div id="header">
+		<div id="logo">
+			<h1><a href="#">My Guest Book</a></h1>
+		
+		</div>
+		<div id="menu">
+			<ul>
+				<li><a th:href="@{adminhome}">Home Page</a></li>
+				
+				<li class="current_page_item"><a th:href="@{allguest}">View Guest</a></li>
+				<li><a th:href="@{allguestnotes}">All GuestNotes</a></li>
+				
+				<li><a th:href="@{adminlogin}">Logout</a></li>
+					
+			</ul>
+		</div>
+	</div>
+
+	<p>Hello <font color="red"><strong>Admin</strong></font> Welcome  </p>
+	
+	<div id="banner">
+
+	<h2 align="center">All Registered Guests</h2>
+	<table align="center">
+	<tr>
+	<th>Name</th>
+	<th>Email</th>
+	<th>Mobile</th>
+	<th>Address</th>
+	<th>UserName</th>
+	</tr>
+	
+	<tr th:each="guest: ${data}">
+		<td th:text="${guest.name}"></td>
+		<td th:text="${guest.email}"></td>
+		<td th:text="${guest.mobile}"></td>
+		<td th:text="${guest.address}"></td>
+		<td th:text="${guest.username}"></td>
+	
+	</tr>
+	</table>
+	
+	</div>
+	
+	
+</div>
+</body>
+</html>

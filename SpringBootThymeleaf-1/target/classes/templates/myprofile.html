@@ -1,0 +1,57 @@
+
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link th:href="@{http://fonts.googleapis.com/css?family=Montserrat:400,700}" rel="stylesheet" type="text/css" />
+<link th:href="@{/css/default.css}" rel="stylesheet" type="text/css" media="all" />
+<link th:href="@{/css/table.css}" rel="stylesheet" type="text/css" media="all" />
+</head>
+<body>
+<div id="wrapper" class="container">
+	<div id="header">
+		<div id="logo">
+			<h1><a href="#">My Guest Book</a></h1>
+			
+		</div>
+		<div id="menu">
+			<ul>
+				<li><a th:href="@{'userhome?email='+${user.email}}">Home Page</a></li>
+				
+				<li class="current_page_item"><a th:href="@{'myprofile?email='+${user.email}}">My Profile</a></li>
+				<li><a th:href="@{'viewnotes?email='+${user.email}}">View Notes</a></li>
+				<li><a th:href="@{guestlogin}">Logout</a></li>
+					
+			</ul>
+		</div>
+	</div>
+	Hello User Welcome <p th:text="${user.email}" style="color:red;"> </p>
+	<div id="banner">
+	<center>
+	<h3 style="margin-top:100px;">My Profile</h3>
+	<table style="margin-bottom:150px;">
+		<tr>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Mobile</th>
+			<th>Address</th>
+		</tr>
+		<tr th:object="${user}">
+			<td th:text="${user.name}"></td>
+			<td th:text="${user.email}"></td>
+			<td th:text="${user.mobile}"></td>
+			<td th:text="${user.address}"></td>
+		</tr>
+	
+	
+	</table>
+	
+	</center>
+	</div>
+	
+	
+</div>
+</body>
+</html>
